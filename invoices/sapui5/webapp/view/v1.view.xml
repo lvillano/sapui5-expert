@@ -1,0 +1,12 @@
+<mvc:View controllerName="logaligroupa21.sapui5.controller.v1"
+
+xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"> 
+
+<Text text="{i18n>helloMsg}"></Text>
+<Button text="{i18n>showHelloButtonText}" press=".onShow"></Button>
+<Input value="{/data/name1}" 
+valueLiveUpdate="true"
+description="concat {/data/name1}" width="60%"></Input>
+
+
+</mvc:View>
