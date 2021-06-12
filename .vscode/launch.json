@@ -86,6 +86,26 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices\"}"
       }
+    },
+    {
+      "name": "Run Proyecto_fiori-employees",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/Proyecto_fiori/proyecto-fiori-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/sapui5employees/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/Proyecto_fiori/employees",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Proyecto_fiori/employees\"}"
+      },
+      "envFile": "${workspaceFolder}/Proyecto_fiori/employees/.env1",
+      "preLaunchTask": "Build Proyecto_fiori"
     }
   ],
   "compounds": [],

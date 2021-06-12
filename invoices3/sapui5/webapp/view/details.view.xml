@@ -1,0 +1,29 @@
+<mvc:View controllerName="logaligroupa21.sapui5.controller.details"
+xmlns="sap.m" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:personalizado="logaligroupa21.sapui5.control"
+displayBlock="true"> 
+
+
+
+<Page title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress="onBack">
+
+<ObjectHeader 
+responsive="true"
+fullScreenOptimized="true"
+title="{northwind>Quantity} x {northwind>ProductName}">
+<attributes>
+<ObjectAttribute text="{northwind>CustomerID}"/>
+<ObjectAttribute text="{northwind>CustomerName}"/>
+
+</attributes>
+</ObjectHeader>
+
+<personalizado:rating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange" />
+
+</Page>
+
+
+
+</mvc:View>

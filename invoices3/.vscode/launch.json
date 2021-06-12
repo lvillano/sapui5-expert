@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "run1",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/invoices3-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaligroupa21sapui5/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/sapui5",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/invoices3/sapui5\"}"
+      },
+      "envFile": "${workspaceFolder}/sapui5/.env1",
+      "preLaunchTask": "Build invoices3"
+    },
+    {
+      "name": "RUN MOCK",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/invoices3-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaligroupa21sapui5/test/mockServer.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/sapui5",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/invoices3/sapui5\"}"
+      },
+      "envFile": "${workspaceFolder}/sapui5/.env2",
+      "preLaunchTask": "Build invoices3"
+    },
+    {
+      "name": "RUN UNIT TEST",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/invoices3-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaligroupa21sapui5/test/unit/unitTest.qunit.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/sapui5",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/invoices3/sapui5\"}"
+      },
+      "envFile": "${workspaceFolder}/sapui5/.env3",
+      "preLaunchTask": "Build invoices3"
+    },
+    {
+      "name": "RUN INTEGRATION OPA5",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/invoices3-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/logaligroupa21sapui5/test/integration/opaTest.qunit.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/sapui5",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/invoices3/sapui5\"}"
+      },
+      "envFile": "${workspaceFolder}/sapui5/.env4",
+      "preLaunchTask": "Build invoices3"
+    }
+  ]
+}

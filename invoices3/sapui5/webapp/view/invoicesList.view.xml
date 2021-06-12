@@ -1,0 +1,148 @@
+<mvc:View controllerName="logaligroupa21.sapui5.controller.invoicesList"
+xmlns="sap.m" 
+xmlns:mvc="sap.ui.core.mvc">
+
+<Panel accessibleRole="Region">
+
+
+<headerToolbar>
+<Toolbar >
+<Title text="{i18n>invoiceListTittle}"></Title>
+<ToolbarSpacer/>
+<SearchField width="50%" search=".filterInvoices" placeholder="{i18n>invoiceListplaceholder}">
+</SearchField>
+</Toolbar>
+</headerToolbar>
+
+<Table id="invoiceList"
+headerText="{i18n>invoiceListTittle}"
+class="sapUiResponsiveMargin" 
+width="auto" 
+items="{ path: 'northwind>/Invoices', 
+        sorter: { path: 'ShipperName',
+        group:  true }
+        }">
+
+<!-- <List id="invoiceList"
+class="sapUiResponsiveMargin" 
+width="auto" 
+items="{ path: 'northwind>/Invoices', 
+        sorter: { path: 'ShipperName',
+        group:  true }
+        }"> -->
+
+
+<!-- aplica para TABLE -->
+<columns>
+
+<Column hAlign="End" minScreenWidth="Small" demandPopin="true" width="6em">
+<Text text="{i18n>invoiceTableQuan}"></Text>
+</Column>
+
+<Column >
+<Text text="{i18n>invoiceTableName}"></Text>
+</Column>
+
+<Column minScreenWidth="Small" demandPopin="true">
+<Text text="{i18n>invoiceTableColumnStatus}"></Text>
+</Column>
+
+<Column minScreenWidth="Tablet">
+<Text text="{i18n>invoiceTableSupplier}"></Text>
+</Column>
+
+<Column hAlign="End">
+<Text text="{i18n>invoiceTablePrice}"></Text>
+</Column>
+
+</columns>
+
+
+<items> 
+<ColumnListItem type="Navigation" press="NavigateDetails">
+<cells>
+<ObjectNumber number="{northwind>Quantity}" emphasized="false"></ObjectNumber>
+<ObjectIdentifier title="{northwind>ProductName}"></ObjectIdentifier>
+<Text text="{path: 'northwind>/Status', formatter: '.formatter.invoiceStatus'}"></Text>
+<Text text="{northwind>ShipperName}"></Text>
+<ObjectNumber number="{ parts : [ {path: 'northwind>ExtendedPrice'}, 
+{path: 'currency>/usd'} ], 
+type: 'sap.ui.model.type.Currency',
+formatOptions:{showMeasure: false}
+}"
+unit="{currency>/usd}"
+state="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Warning'}"></ObjectNumber>
+</cells>
+</ColumnListItem>
+
+<!-- <ObjectListItem title="{northwind>Quantity} x {northwind>ProductName}" 
+number="{ parts : [ {path: 'northwind>ExtendedPrice'}, 
+{path: 'currency>/usd'} ], 
+type: 'sap.ui.model.type.Currency',
+formatOptions:{showMeasure: false}
+}"
+numberUnit="{currency>/usd}"
+numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Warning'}"
+type="Navigation"
+press="NavigateDetails"
+> -->
+
+
+<!-- <firstStatus>
+<ObjectStatus text="{ path: 'invoices>Status',
+formatter: '.formatter.invoiceStatus'
+}
+"> 
+</ObjectStatus>
+</firstStatus>-->
+<!-- </ObjectListItem> -->
+</items>
+
+</Table>
+<!-- </List> -->
+
+</Panel>
+
+</mvc:View>
+
+<!--  LISTADO CON ODATA LOCAL -->
+<!-- <List id="invoiceList"
+class="sapUiResponsiveMargin" 
+width="auto" 
+items="{ path: 'invoices>/Invoices', 
+        sorter: { path: 'ShipperName',
+        group:  true }
+        }">
+<headerToolbar>
+<Toolbar >
+<Title text="{i18n>invoiceListTittle}"></Title>
+<ToolbarSpacer/>
+<SearchField width="50%" search=".filterInvoices">
+</SearchField>
+</Toolbar>
+</headerToolbar>
+<items> 
+<ObjectListItem title="{invoices>Quantity} x {invoices>ProductName}" 
+number="{ parts : [ {path: 'invoices>ExtendedPrice'}, 
+{path: 'currency>/usd'} ], 
+type: 'sap.ui.model.type.Currency',
+formatOptions:{showMeasure: false}
+}"
+numberUnit="{currency>/usd}"
+numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Warning'}"
+>
+<firstStatus>
+<ObjectStatus text="{ path: 'invoices>Status',
+formatter: '.formatter.invoiceStatus'
+}
+">
+</ObjectStatus>
+</firstStatus>
+</ObjectListItem>
+</items>
+</List> 
+</mvc:View>-->
+<!-- LISTADO CON ODATA LOCAL -->
+
+
+

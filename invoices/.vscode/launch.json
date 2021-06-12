@@ -86,6 +86,33 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/sapui5\"}"
       }
+    },
+    {
+      "name": "run6",
+      "cwd": "${workspaceFolder}/sapui5",
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "windows": {
+        "runtimeExecutable": "npm.cmd",
+        "args": [
+          "--backendConfig",
+          "\"[{\\\"path\\\":\\\"/sap\\\",\\\"destination\\\":\\\"Northwind\\\"}]\""
+        ]
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/sapui5\"}"
+      },
+      "args": [
+        "--backendConfig",
+        "[{\"path\":\"/sap\",\"destination\":\"Northwind\"}]"
+      ]
     }
   ],
   "compounds": [],
